@@ -1,32 +1,33 @@
-FROM alpine:latest
-
-ARG	webmin_version=1.880
-ARG install_dir="/etc"
+FROM ubuntu:latest
 
 LABEL maintainer="Stephen.ancliffe@gmail.com"
-LABEL webmin=$webmin_version
-LABEL bind=""
-LABEL perl="5.26.1"
 LABEL description="BIND9 with webmin"
 
-#Install Perl for webmin and update openssl
-RUN apk --update upgrade && apk add perl perl-net-ssleay openssl bash bash-doc bash-completion grep
+#Ensure we are up to date
+RUN apt update && apt upgrade
+
+#Add webmin repository
+WORKDIR /etc/apt/sources.list.d
+RUN echo "deb http://download.webmin.com/download/repository sarge contrib" > /etc/apt/sources.list.d/webmin.list
+
+ #Install wget and add repository key
+RUN apt install -y wget
+RUN wget -qO - http://www.webmin.com/jcameron-key.asc | apt-key add -
+
+#Docker specific bug fix
+WORKDIR /etc/apt/apt.conf.d
+RUN echo "Acquire::GzipIndexes "false";" > docker-gzip-indexes
 
 #Install webmin
-RUN wget  http://prdownloads.sourceforge.net/webadmin/webmin-$webmin_version-minimal.tar.gz -P $install_dir 
+RUN apt update
 
-WORKDIR  $install_dir 
-RUN gunzip webmin-$webmin_version-minimal.tar.gz && \
- tar xvf webmin-$webmin_version-minimal.tar && \
- mv webmin-$webmin_version webmin
+#Load my BASH prefs
+RUN wget https://raw.githubusercontent.com/SuperFlea2828/BASHScripts/master/.bashrc -O ~/.bashrc && . ~/.bashrc
 
 EXPOSE 10000
 
-WORKDIR $install_dir/webmin
 
-#NEEDS INVESTIGATION: Currently hangs on "Enabling background status collection .." step of install script. Running setup.sh twice will fix. Perl dep issue??
-#CMD ["./setup.sh"]
 
-#RUN rm -rf /var/cache/apk/*
+
 
 
