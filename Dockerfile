@@ -20,7 +20,13 @@ RUN gunzip webmin-$webmin_version-minimal.tar.gz && \
  tar xvf webmin-$webmin_version-minimal.tar && \
  mv webmin-$webmin_version webmin
 
-#RUN  $install_dir/webmin/setup.sh
+EXPOSE 10000
+
+WORKDIR $install_dir/webmin
+
+#NEEDS INVESTIGATION: Currently hangs on "Enabling background status collection .." step of install script. Running setup.sh twice will fix. Perl dep issue??
+#CMD ["./setup.sh"]
 
 #RUN rm -rf /var/cache/apk/*
+
 
