@@ -1,0 +1,15 @@
+$ttl 38400
+stevehome.online.	IN	SOA	10.0.75.1. anon.stevehome.online. (
+			1521077088
+			10800
+			3600
+			604800
+			38400 )
+stevehome.online.	IN	NS	10.0.75.1.
+stevehome.online.	IN	A	192.168.1.2
+router.stevehome.online.	IN	A	192.168.1.1
+kodi.stevehome.online.	IN	A	192.168.1.2
+tv.stevehome.online.	IN	A	192.168.1.2
+movie.stevehome.online.	IN	A	192.168.1.2
+downloads.stevehome.online.	IN	A	192.168.1.2
+
