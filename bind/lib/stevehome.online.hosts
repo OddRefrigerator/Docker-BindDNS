@@ -8,8 +8,16 @@ stevehome.online.	IN	SOA	10.0.75.1. anon.stevehome.online. (
 stevehome.online.	IN	NS	10.0.75.1.
 stevehome.online.	IN	A	192.168.1.2
 router.stevehome.online.	IN	A	192.168.1.1
-kodi.stevehome.online.	IN	A	192.168.1.2
+kodi-livingroom.stevehome.online.	IN	A	192.168.1.2
+kodi-bedroom.stevehome.online.	IN	A	192.168.1.4
+mysql.stevehome.online.	IN	A	192.168.1.2
 tv.stevehome.online.	IN	A	192.168.1.2
 movie.stevehome.online.	IN	A	192.168.1.2
 downloads.stevehome.online.	IN	A	192.168.1.2
-
+xbox.stevehome.online.	IN	A	192.168.1.5
+acer.stevehome.online.	IN	A	192.168.1.101
+asus.stevehome.online.	IN	A	192.168.1.102
+steve-phone.stevehome.online.	IN	A	192.168.1.7
+steve-tablet.stevehome.online.	IN	A	192.168.1.8
+marj-phone.stevehome.online.	IN	A	192.168.1.9
+marj-tablet.stevehome.online.	IN	A	192.168.1.10
