@@ -6,7 +6,7 @@
 // organization
 //include "/etc/bind/zones.rfc1918";
 
-zone "burritosupreme.com" {
+zone "stevehome.online" {
 	type master;
-	file "/var/lib/bind/burritosupreme.com.hosts";
+	file "/var/lib/bind/stevehome.online.hosts";
 	};
