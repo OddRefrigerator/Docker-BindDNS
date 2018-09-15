@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM sameersbn/bind:9.11.3-20180713
 
 LABEL maintainer="Stephen.ancliffe@gmail.com"
 LABEL description="BIND9"
@@ -13,11 +13,8 @@ RUN echo "Acquire::GzipIndexes "false";" > docker-gzip-indexes
 #Ensure we are up to date
 RUN apt update && apt upgrade -y
 
-#Install bind9
-RUN DEBIAN_FRONTEND=noninteractive apt-get -y install bind9
-
 #copy bind directory
-COPY bind /etc/bind
+COPY bind /data
 
 EXPOSE 53
 

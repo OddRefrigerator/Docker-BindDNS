@@ -1,4 +1,9 @@
 docker run --name bind -d --restart=always `
+	--publish 53:53/tcp --publish 53:53/udp `
+	superflea2828/homedns:latest
+
+
+docker run --name bind -d --restart=always `
   --publish 53:53/tcp --publish 53:53/udp --publish 10000:10000/tcp `
   --volume D:\Docker\BIND:/data `
   sameersbn/bind:9.11.3-20180713
