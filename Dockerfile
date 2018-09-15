@@ -1,26 +1,31 @@
-FROM sameersbn/bind:9.11.3-20180713
+FROM ubuntu:latest
 
 LABEL maintainer="Stephen.ancliffe@gmail.com"
 LABEL description="BIND9"
 
 # Change root password
-#RUN echo root:pass | chpasswd
+RUN echo root:password | chpasswd
 
-#Docker specific bug fix
-WORKDIR /etc/apt/apt.conf.d
-RUN echo "Acquire::GzipIndexes "false";" > docker-gzip-indexes
+RUN apt-get update \
+ && apt-get upgrade -y
 
-#Ensure we are up to date
-RUN apt update && apt upgrade -y
+#Install BIND9
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install bind9
 
-#copy bind directory
-COPY bind /data
 
-EXPOSE 53
+#copy named.conf.local
+COPY named.conf.local /etc/bind/named.conf.local
+RUN chmod 644 /etc/bind/named.conf.local
 
-VOLUME /data
+#copy stevehome.online.hosts
+COPY stevehome.online.hosts /var/lib/bind/stevehome.online.hosts
+RUN chmod 644 /var/lib/bind/stevehome.online.hosts
 
-CMD ["/usr/sbin/named", "-c", "/etc/bind/named.conf", "-f"]
 
+EXPOSE 53/udp 53/tcp
+
+ADD start.sh /usr/local/bin/
+
+ENTRYPOINT ["/usr/local/bin/start.sh"]
 
 
