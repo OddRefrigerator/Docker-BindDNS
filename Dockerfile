@@ -23,7 +23,7 @@ COPY stevehome.online.hosts /var/lib/bind/stevehome.online.hosts
 RUN chmod 644 /var/lib/bind/stevehome.online.hosts
 
 #Add start up script
-ADD start.sh /usr/local/bin/
+COPY start.sh /usr/local/bin/
 
 EXPOSE 53/udp 53/tcp
 
