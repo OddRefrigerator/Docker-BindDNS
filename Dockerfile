@@ -18,6 +18,10 @@ RUN apt-get update &&\
 COPY named.conf.local /etc/bind/named.conf.local
 RUN chmod 644 /etc/bind/named.conf.local
 
+#copy named.conf.options
+COPY named.conf.options /etc/bind/named.conf.options
+RUN chmod 644 /etc/bind/named.conf.options
+
 #copy stevehome.online.hosts
 COPY stevehome.online.hosts /var/lib/bind/stevehome.online.hosts
 RUN chmod 644 /var/lib/bind/stevehome.online.hosts
