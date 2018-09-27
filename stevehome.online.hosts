@@ -21,7 +21,7 @@ kodi-bedroom.stevehome.online.		IN	A		192.168.1.11
 asus.stevehome.online.				IN	A		192.168.1.12
 nest.stevehome.online.				IN	A		192.168.1.13
 
-;Server web app services (Hostname request-->resolve CNAME for IP-->nginx reverse proxy check hostname in request-->forward trafic to IP:port)
+;Server web app services
 download.stevehome.online.			IN	CNAME	srv1.stevehome.online.
 kodi-livingroom.stevehome.online.	IN	CNAME	srv1.stevehome.online.
 movie.stevehome.online.				IN	CNAME	srv1.stevehome.online.
