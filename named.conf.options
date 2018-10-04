@@ -1,3 +1,9 @@
+acl "local-net" { 
+    192.168.1.0/24;
+    localhost;
+    localnets;
+};
+
 options {
         directory "/var/cache/bind";
 
@@ -35,9 +41,7 @@ options {
                 1.0.0.1;
         };
 
-        // allow-recursion { any; };
-        //allow-query { any; };
-        // allow-query-cache { any; };
+        allow-query { any; };
+        allow-recursion { local-net; };
+        allow-query-cache { local-net; };
 };
-
-
