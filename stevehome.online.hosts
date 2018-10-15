@@ -1,25 +1,28 @@
 $ttl 38400
 stevehome.online.       IN      SOA     0102bbd3ae17. stephen\.ancliffe.gmail.com. (
-                        1536687452
+                        2018101500 
                         10800
                         3600
                         604800
                         38400 )
 stevehome.online.                       IN      NS              0102bbd3ae17.
 router.stevehome.online.                IN      A               192.168.1.1
-stevehome.online.                       IN      A               192.168.1.2
-srv1.stevehome.online.                  IN      A               192.168.1.2
-xbox.stevehome.online.                  IN      A               192.168.1.3
-steve-phone.stevehome.online.           IN      A               192.168.1.4
-steve-tablet.stevehome.online.          IN      A               192.168.1.5
-steve-ipad.stevehome.online.            IN      A               192.168.1.6
-steve-laptop.stevehome.online.          IN      A               192.168.1.7
+stevehome.online.                       IN      A               192.168.1.2 ;74-D4-35-A6-78-9C
+srv1.stevehome.online.                  IN      A               192.168.1.2 ;74-D4-35-A6-78-9C
+xbox.stevehome.online.                  IN      A               192.168.1.3 ;20-16-D8-D6-3D-2F
+steve-phone.stevehome.online.           IN      A               192.168.1.4 ;B4-F1-DA-E9-B2-0A
+steve-tablet.stevehome.online.          IN      A               192.168.1.5 ;14-32-D1-66-EC-3D
+steve-ipad.stevehome.online.            IN      A               192.168.1.6 ;D8-A2-5E-21-04-E3
+steve-laptop.stevehome.online.          IN      A               192.168.1.7 ;3C:A0:67:79:C4:5B
 marj-phone.stevehome.online.            IN      A               192.168.1.8
-marj-ipad.stevehome.online.             IN      A               192.168.1.9
+marj-ipad.stevehome.online.             IN      A               192.168.1.9 ;C8-F6-50-0B-21-A2
 marj-laptop.stevehome.online.           IN      A               192.168.1.10
 kodi-bedroom.stevehome.online.          IN      A               192.168.1.11
 asus.stevehome.online.                  IN      A               192.168.1.12
-nest.stevehome.online.                  IN      A               192.168.1.13
+nest.stevehome.online.                  IN      A               192.168.1.13 ;18:B4:30:C0:E0:BD
+dyson.stevehome.online.                 IN      A               192.168.1.14 ;C8-FF-77-D4-97-94
+samsungtv-livingroom.stevehome.online.  IN      A               192.168.1.15 ;78-BD-BC-34-1F-3F
+samsungtv-bedroom.stevehome.online.     IN      A               192.168.1.16 ;5C-F6-DC-15-94-1F
 
 ;Server web app services
 download.stevehome.online.                      IN      CNAME   srv1.stevehome.online.
@@ -29,5 +32,4 @@ movies.stevehome.online.                        IN      CNAME   srv1.stevehome.o
 mysql.stevehome.online.                         IN      CNAME   srv1.stevehome.online.
 tv.stevehome.online.                            IN      CNAME   srv1.stevehome.online.
 www.stevehome.online.                           IN      CNAME   srv1.stevehome.online.
-
 
