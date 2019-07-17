@@ -4,6 +4,7 @@ LABEL maintainer="Stephen.ancliffe@gmail.com"
 LABEL description="ubuntu"
 LABEL description="BIND9"
 LABEL description="stevehome.online"
+LABEL description="home.com"
 
 # Change root password
 RUN echo root:P@$$w0rd | chpasswd
@@ -25,6 +26,10 @@ RUN chmod 644 /etc/bind/named.conf.options
 #copy stevehome.online.hosts
 COPY stevehome.online.hosts /var/lib/bind/stevehome.online.hosts
 RUN chmod 644 /var/lib/bind/stevehome.online.hosts
+
+#copy home.com.hosts
+COPY home.com.hosts /var/lib/bind/home.com.hosts
+RUN chmod 644 /var/lib/bind/home.com.hosts
 
 #Add start up script
 COPY start.sh /usr/local/bin/
