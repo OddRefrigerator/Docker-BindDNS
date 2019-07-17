@@ -1,0 +1,35 @@
+$ORIGIN home.com.
+$TTL	86400 
+@	SOA	ns1.home.com.	hostmaster.home.com. (
+		20190717   ; serial
+		21600      ; refresh after 6 hours
+		3600       ; retry after 1 hour
+		604800     ; expire after 1 week
+		86400 )    ; minimum TTL of 1 day
+;
+;
+; DNS servers
+           NS    ns1.home.com. 
+ns1        A     192.168.1.9
+;
+; Network clients with DHCP reservations
+router                 A               192.168.1.1 ;
+srv1                   A               192.168.1.2 ;74-D4-35-A6-78-9C
+xbox                   A               192.168.1.3 ;30-59-B7-4C-EA-83
+steve-phone            A               192.168.1.4 ;B4-F1-DA-E9-B2-0A
+steve-tablet           A               192.168.1.5 ;14-32-D1-66-EC-3D
+steve-ipad             A               192.168.1.6 ;D8-A2-5E-21-04-E3
+steve-laptop           A               192.168.1.7 ;3C-A0-67-79-C4-5B
+steve-oldlaptop        A               192.168.1.8 ;
+Raspberrypi2           A               192.168.1.9 ;B8-27-EB-29-EB-1E
+raspberrypi3           A               192.168.1.10;
+sonytv                 A               192.168.1.11;28-3A-4D-24-6E-9B
+;
+; Server web app services
+www                    CNAME   srv1.home.com.
+mysql                  CNAME   srv1.home.com.
+download               CNAME   srv1.home.com.
+tv                     CNAME   srv1.home.com.
+movies                 CNAME   srv1.home.com.
+kodi                   CNAME   srv1.home.com.
+;
