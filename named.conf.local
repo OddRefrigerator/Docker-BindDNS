@@ -10,3 +10,8 @@ zone "stevehome.online" {
 	type master;
 	file "/var/lib/bind/stevehome.online.hosts";
 	};
+
+zone "home.com" {
+	type master;
+	file "/var/lib/bind/home.com.hosts";
+	};
