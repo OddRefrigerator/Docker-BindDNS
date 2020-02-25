@@ -6,11 +6,6 @@
 // organization
 //include "/etc/bind/zones.rfc1918";
 
-zone "stevehome.online" {
-	type master;
-	file "/var/lib/bind/stevehome.online.hosts";
-	};
-
 zone "home.com" {
 	type master;
 	file "/var/lib/bind/home.com.hosts";

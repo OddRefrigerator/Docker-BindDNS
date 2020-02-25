@@ -26,10 +26,10 @@ raspberrypi3           A               192.168.1.10;
 sonytv                 A               192.168.1.11;28-3A-4D-24-6E-9B
 ;
 ; Server web app services
-www                    CNAME   srv1.home.com.
-mysql                  CNAME   srv1.home.com.
-download               CNAME   srv1.home.com.
-tv                     CNAME   srv1.home.com.
-movies                 CNAME   srv1.home.com.
-kodi                   CNAME   srv1.home.com.
+www                    CNAME   ns1.home.com.
+mysql                  CNAME   ns1.home.com.
+download               CNAME   ns1.home.com.
+tv                     CNAME   ns1.home.com.
+movies                 CNAME   ns1.home.com.
+kodi                   CNAME   ns1.home.com.
 ;

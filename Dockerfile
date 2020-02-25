@@ -23,10 +23,6 @@ RUN chmod 644 /etc/bind/named.conf.local
 COPY named.conf.options /etc/bind/named.conf.options
 RUN chmod 644 /etc/bind/named.conf.options
 
-#copy stevehome.online.hosts
-COPY stevehome.online.hosts /var/lib/bind/stevehome.online.hosts
-RUN chmod 644 /var/lib/bind/stevehome.online.hosts
-
 #copy home.com.hosts
 COPY home.com.hosts /var/lib/bind/home.com.hosts
 RUN chmod 644 /var/lib/bind/home.com.hosts
